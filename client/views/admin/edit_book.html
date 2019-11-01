@@ -1,0 +1,61 @@
+<a href="#/books">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Book</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <form ng-submit="updateBook()" ng-init="getBook()">
+          <div class="form-group">
+            <label>Admission Number</label>
+            <input
+              type="text"
+              class="form-control"
+              ng-model="book.admn"
+              placeholder="Admission number"
+            />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              type="text"
+              class="form-control"
+              ng-model="book.email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <label>Movie Name</label>
+            <input
+              type="text"
+              class="form-control"
+              ng-model="book.movie"
+              placeholder="Moviename"
+            />
+          </div>
+          <div class="form-group">
+            <label>Rating</label>
+            <select ng-model="book.rating" class="form-control">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Review</label>
+            <textarea
+              class="form-control"
+              ng-model="book.review"
+              placeholder="Description"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<a href="#/books">Go Back</a>
+<div class="panel panel-default" ng-init="getBook()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Movie Name : {{ book.movie }}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item">Review: {{ book.review }}</li>
+          <li class="list-group-item">Rating: {{ book.rating }}</li>
+          <li class="list-group-item">Author: {{ book.email }}</li>
+          <li class="list-group-item">Admission Number: {{ book.admn }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/books/edit/{{ book._id }}">Edit</a> |
+  <a href="#" ng-click="removeBook(book._id)">Delete</a>
+</div>
