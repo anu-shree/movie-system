@@ -12,11 +12,15 @@ Book = require("./models/book");
 mongoose.connect("mongodb://localhost/bookstore");
 var db = mongoose.connection;
 
-app.get("/student", (req, res) => {
-  res.send("Please use /api/books or /api/genres");
+app.get("/", (req, res) => {
+  res.send("Please use /api/books ");
 });
 
-app.get("/api/student/books", (req, res) => {
+app.get("/student", (req, res) => {
+  res.send("Please use /api/books ");
+});
+
+app.get("/student/books", (req, res) => {
   Book.getBooks((err, books) => {
     if (err) {
       throw err;
@@ -25,7 +29,7 @@ app.get("/api/student/books", (req, res) => {
   });
 });
 
-app.get("/api/student/books/:_id", (req, res) => {
+app.get("/student/books/:_id", (req, res) => {
   Book.getBookById(req.params._id, (err, book) => {
     if (err) {
       throw err;
@@ -34,7 +38,7 @@ app.get("/api/student/books/:_id", (req, res) => {
   });
 });
 
-app.post("/api/student/books", (req, res) => {
+app.post("/student/books", (req, res) => {
   var book = req.body;
   Book.addBook(book, (err, book) => {
     if (err) {
@@ -44,7 +48,7 @@ app.post("/api/student/books", (req, res) => {
   });
 });
 
-app.put("/api/student/books/:_id", (req, res) => {
+app.put("/student/books/:_id", (req, res) => {
   var id = req.params._id;
   var book = req.body;
   Book.updateBook(id, book, {}, (err, book) => {
@@ -55,7 +59,7 @@ app.put("/api/student/books/:_id", (req, res) => {
   });
 });
 
-app.delete("/api/student/books/:_id", (req, res) => {
+app.delete("/student/books/:_id", (req, res) => {
   var id = req.params._id;
   Book.removeBook(id, (err, book) => {
     if (err) {
@@ -66,10 +70,10 @@ app.delete("/api/student/books/:_id", (req, res) => {
 });
 
 app.get("/admin", (req, res) => {
-  res.send("Please use //books or /api/genres");
+  res.send("Please use /api/books ");
 });
 
-app.get("/api/admin/books", (req, res) => {
+app.get("/admin/books", (req, res) => {
   Book.getBooks((err, books) => {
     if (err) {
       throw err;
@@ -78,7 +82,7 @@ app.get("/api/admin/books", (req, res) => {
   });
 });
 
-app.get("/api/admin/books/:_id", (req, res) => {
+app.get("/admin/books/:_id", (req, res) => {
   Book.getBookById(req.params._id, (err, book) => {
     if (err) {
       throw err;
@@ -87,7 +91,7 @@ app.get("/api/admin/books/:_id", (req, res) => {
   });
 });
 
-app.post("/api/admin/books", (req, res) => {
+app.post("/admin/books", (req, res) => {
   var book = req.body;
   Book.addBook(book, (err, book) => {
     if (err) {
@@ -97,7 +101,7 @@ app.post("/api/admin/books", (req, res) => {
   });
 });
 
-app.put("/api/admin/books/:_id", (req, res) => {
+app.put("/admin/books/:_id", (req, res) => {
   var id = req.params._id;
   var book = req.body;
   Book.updateBook(id, book, {}, (err, book) => {
@@ -108,7 +112,7 @@ app.put("/api/admin/books/:_id", (req, res) => {
   });
 });
 
-app.delete("/api/admin/books/:_id", (req, res) => {
+app.delete("/admin/books/:_id", (req, res) => {
   var id = req.params._id;
   Book.removeBook(id, (err, book) => {
     if (err) {
