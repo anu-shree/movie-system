@@ -1,4 +1,31 @@
-<a href="books">Go Back</a>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Bookstore</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="admin/books/add">Add Book</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+<a href="#/admin/books">Go Back</a>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Edit Book</h3>
@@ -36,7 +63,7 @@
           </div>
           <div class="form-group">
             <label>Rating</label>
-            <select ng-model="book.rating" class="form-control">
+            <select ng-model="book.rating" class="form-control" placeholder="1">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -52,7 +79,18 @@
               placeholder="Description"
             ></textarea>
           </div>
-
+          <div class="form-group">
+            <label>Approval Status</label>
+            <select
+              ng-model="book.approved"
+              class="form-control"
+              placeholder="Pending"
+            >
+              <option value="Pending">Pending</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>

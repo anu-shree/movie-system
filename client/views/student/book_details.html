@@ -18,14 +18,14 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="books/add">Add Book</a></li>
+        <li><a href="student/books/add">Add Book</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
   </div>
 </nav>
 
-<a href="student/books">Go Back</a>
+<a href="#/student/books">Go Back</a>
 <div class="panel panel-default" ng-init="getBook()">
   <div class="panel-heading">
     <h3 class="panel-title">Movie Name : {{ book.movie }}</h3>
@@ -38,6 +38,7 @@
           <li class="list-group-item">Rating: {{ book.rating }}</li>
           <li class="list-group-item">Author: {{ book.email }}</li>
           <li class="list-group-item">Admission Number: {{ book.admn }}</li>
+          <li class="list-group-item">Approved Status: {{ book.approved }}</li>
         </ul>
       </div>
     </div>

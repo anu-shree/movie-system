@@ -24,7 +24,7 @@
     <!--/.nav-collapse -->
   </div>
 </nav>
-
+<a href="#/">Go Back</a>
 <div class="panel panel-default" ng-init="getBooks()">
   <div class="panel-heading">
     <h3 class="panel-title">Recent reviews</h3>
@@ -36,6 +36,7 @@
           <div class="col-md-6">
             <h4>Movie Name : {{ book.movie }}</h4>
             <p>Review : {{ book.review }}</p>
+            <p>Approved Status: {{ book.approved }}</p>
             <a
               class="btn btn-primary"
               href="#/student/books/details/{{ book._id }}"

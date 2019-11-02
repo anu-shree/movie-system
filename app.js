@@ -93,7 +93,7 @@ app.get("/admin/books/:_id", (req, res) => {
 
 app.post("/admin/books", (req, res) => {
   var book = req.body;
-  Book.addBook(book, (err, book) => {
+  Book.addBookA(book, (err, book) => {
     if (err) {
       throw err;
     }

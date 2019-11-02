@@ -21,6 +21,10 @@ const bookSchema = mongoose.Schema({
   email: {
     type: String,
     required: true
+  },
+  approved: {
+    type: String,
+    default: "Pending"
   }
 });
 
@@ -41,6 +45,10 @@ module.exports.addBook = (book, callback) => {
   Book.create(book, callback);
 };
 
+module.exports.addBookA = (book, callback) => {
+  Book.create(book, callback);
+};
+
 // Update Book
 module.exports.updateBook = (id, book, options, callback) => {
   var query = { _id: id };
@@ -49,7 +57,8 @@ module.exports.updateBook = (id, book, options, callback) => {
     movie: book.movie,
     review: book.review,
     rating: book.rating,
-    email: book.email
+    email: book.email,
+    approved: book.approved
   };
   Book.findOneAndUpdate(query, update, options, callback);
 };

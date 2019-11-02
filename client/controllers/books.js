@@ -34,17 +34,17 @@ myApp.controller("BooksController", [
       });
     };
 
-    $scope.addBook = function() {
+    $scope.addBookA = function() {
       console.log($scope.book);
-      $http.post("/student/books/", $scope.book).success(function(response) {
-        window.location.href = "#/student/books";
+      $http.post("/admin/books/", $scope.book).success(function(response) {
+        window.location.href = "#/admin/books";
       });
     };
 
     $scope.addBook = function() {
       console.log($scope.book);
-      $http.post("/admin/books/", $scope.book).success(function(response) {
-        window.location.href = "#/admin/books";
+      $http.post("/student/books/", $scope.book).success(function(response) {
+        window.location.href = "#/student/books";
       });
     };
 
