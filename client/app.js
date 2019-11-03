@@ -3,47 +3,47 @@ var myApp = angular.module("myApp", ["ngRoute"]);
 myApp.config(function($routeProvider) {
   $routeProvider
     .when("/", {
-      controller: "BooksController",
+      controller: "MoviesController",
       templateUrl: "views/login.html"
     })
     .when("/student", {
-      controller: "BooksController",
+      controller: "MoviesController",
       templateUrl: "views/student/books.html"
     })
-    .when("/student/books", {
-      controller: "BooksController",
+    .when("/student/movies", {
+      controller: "MoviesController",
       templateUrl: "views/student/books.html"
     })
-    .when("/student/books/details/:id", {
-      controller: "BooksController",
+    .when("/student/movies/details/:id", {
+      controller: "MoviesController",
       templateUrl: "views/student/book_details.html"
     })
-    .when("/student/books/add", {
-      controller: "BooksController",
+    .when("/student/movies/add", {
+      controller: "MoviesController",
       templateUrl: "views/student/add_book.html"
     })
-    .when("/student/books/edit/:id", {
-      controller: "BooksController",
+    .when("/student/movies/edit/:id", {
+      controller: "MoviesController",
       templateUrl: "views/student/edit_book.html"
     })
     .when("/admin", {
-      controller: "BooksController",
+      controller: "MoviesController",
       templateUrl: "views/books.html"
     })
-    .when("/admin/books", {
-      controller: "BooksController",
+    .when("/admin/movies", {
+      controller: "MoviesController",
       templateUrl: "views/admin/books.html"
     })
-    .when("/admin/books/details/:id", {
-      controller: "BooksController",
+    .when("/admin/movies/details/:id", {
+      controller: "MoviesController",
       templateUrl: "views/admin/book_details.html"
     })
-    .when("/admin/books/add", {
-      controller: "BooksController",
+    .when("/admin/movies/add", {
+      controller: "MoviesController",
       templateUrl: "views/admin/add_book.html"
     })
-    .when("/admin/books/edit/:id", {
-      controller: "BooksController",
+    .when("/admin/movies/edit/:id", {
+      controller: "MoviesController",
       templateUrl: "views/admin/edit_book.html"
     })
     .otherwise({

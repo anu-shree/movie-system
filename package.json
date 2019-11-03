@@ -1,7 +1,7 @@
 {
-  "name": "bookstore",
+  "name": "movie-system",
   "version": "1.0.0",
-  "description": "Simple bookstore app",
+  "description": "Simple movie-review app",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,6 @@
     "body-parser": "*",
     "mongoose": "*"
   },
-  "author": "Brad Traversy",
+  "author": "Amardeep Kumar",
   "license": "ISC"
 }

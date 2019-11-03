@@ -31,26 +31,26 @@ const bookSchema = mongoose.Schema({
 const Book = (module.exports = mongoose.model("Book", bookSchema));
 
 // Get Books
-module.exports.getBooks = (callback, limit) => {
+module.exports.getReviews = (callback, limit) => {
   Book.find(callback).limit(limit);
 };
 
 // Get Book
-module.exports.getBookById = (id, callback) => {
+module.exports.getReviewById = (id, callback) => {
   Book.findById(id, callback);
 };
 
 // Add Book
-module.exports.addBook = (book, callback) => {
+module.exports.addReview = (book, callback) => {
   Book.create(book, callback);
 };
 
-module.exports.addBookA = (book, callback) => {
+module.exports.addReviewA = (book, callback) => {
   Book.create(book, callback);
 };
 
 // Update Book
-module.exports.updateBook = (id, book, options, callback) => {
+module.exports.updateReview = (id, book, options, callback) => {
   var query = { _id: id };
   var update = {
     admn: book.admn,
@@ -64,7 +64,7 @@ module.exports.updateBook = (id, book, options, callback) => {
 };
 
 // Delete Book
-module.exports.removeBook = (id, callback) => {
+module.exports.removeReview = (id, callback) => {
   var query = { _id: id };
   Book.remove(query, callback);
 };

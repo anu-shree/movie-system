@@ -13,15 +13,11 @@ mongoose.connect("mongodb://localhost/bookstore");
 var db = mongoose.connection;
 
 app.get("/", (req, res) => {
-  res.send("Please use /api/books ");
+  res.send("Please use /api/movies ");
 });
 
 app.get("/student", (req, res) => {
-  res.send("Please use /api/books ");
-});
-
-app.get("/student/books", (req, res) => {
-  Book.getBooks((err, books) => {
+  Book.getReviews((err, books) => {
     if (err) {
       throw err;
     }
@@ -29,8 +25,17 @@ app.get("/student/books", (req, res) => {
   });
 });
 
-app.get("/student/books/:_id", (req, res) => {
-  Book.getBookById(req.params._id, (err, book) => {
+app.get("/student/movies", (req, res) => {
+  Book.getReviews((err, books) => {
+    if (err) {
+      throw err;
+    }
+    res.json(books);
+  });
+});
+
+app.get("/student/movies/:_id", (req, res) => {
+  Book.getReviewById(req.params._id, (err, book) => {
     if (err) {
       throw err;
     }
@@ -38,9 +43,9 @@ app.get("/student/books/:_id", (req, res) => {
   });
 });
 
-app.post("/student/books", (req, res) => {
+app.post("/student/movies", (req, res) => {
   var book = req.body;
-  Book.addBook(book, (err, book) => {
+  Book.addReview(book, (err, book) => {
     if (err) {
       throw err;
     }
@@ -48,10 +53,10 @@ app.post("/student/books", (req, res) => {
   });
 });
 
-app.put("/student/books/:_id", (req, res) => {
+app.put("/student/movies/:_id", (req, res) => {
   var id = req.params._id;
   var book = req.body;
-  Book.updateBook(id, book, {}, (err, book) => {
+  Book.updateReview(id, book, {}, (err, book) => {
     if (err) {
       throw err;
     }
@@ -59,9 +64,9 @@ app.put("/student/books/:_id", (req, res) => {
   });
 });
 
-app.delete("/student/books/:_id", (req, res) => {
+app.delete("/student/movies/:_id", (req, res) => {
   var id = req.params._id;
-  Book.removeBook(id, (err, book) => {
+  Book.removeReview(id, (err, book) => {
     if (err) {
       throw err;
     }
@@ -70,11 +75,7 @@ app.delete("/student/books/:_id", (req, res) => {
 });
 
 app.get("/admin", (req, res) => {
-  res.send("Please use /api/books ");
-});
-
-app.get("/admin/books", (req, res) => {
-  Book.getBooks((err, books) => {
+  Book.getReviews((err, books) => {
     if (err) {
       throw err;
     }
@@ -82,8 +83,17 @@ app.get("/admin/books", (req, res) => {
   });
 });
 
-app.get("/admin/books/:_id", (req, res) => {
-  Book.getBookById(req.params._id, (err, book) => {
+app.get("/admin/movies", (req, res) => {
+  Book.getReviews((err, books) => {
+    if (err) {
+      throw err;
+    }
+    res.json(books);
+  });
+});
+
+app.get("/admin/movies/:_id", (req, res) => {
+  Book.getReviewById(req.params._id, (err, book) => {
     if (err) {
       throw err;
     }
@@ -91,9 +101,9 @@ app.get("/admin/books/:_id", (req, res) => {
   });
 });
 
-app.post("/admin/books", (req, res) => {
+app.post("/admin/movies", (req, res) => {
   var book = req.body;
-  Book.addBookA(book, (err, book) => {
+  Book.addReviewA(book, (err, book) => {
     if (err) {
       throw err;
     }
@@ -101,10 +111,10 @@ app.post("/admin/books", (req, res) => {
   });
 });
 
-app.put("/admin/books/:_id", (req, res) => {
+app.put("/admin/movies/:_id", (req, res) => {
   var id = req.params._id;
   var book = req.body;
-  Book.updateBook(id, book, {}, (err, book) => {
+  Book.updateReview(id, book, {}, (err, book) => {
     if (err) {
       throw err;
     }
@@ -112,9 +122,9 @@ app.put("/admin/books/:_id", (req, res) => {
   });
 });
 
-app.delete("/admin/books/:_id", (req, res) => {
+app.delete("/admin/movies/:_id", (req, res) => {
   var id = req.params._id;
-  Book.removeBook(id, (err, book) => {
+  Book.removeReview(id, (err, book) => {
     if (err) {
       throw err;
     }
@@ -123,4 +133,4 @@ app.delete("/admin/books/:_id", (req, res) => {
 });
 
 app.listen(3041);
-console.log("Running on port 3040...");
+console.log("Running on port 3041...");

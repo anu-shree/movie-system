@@ -14,11 +14,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bookstore</a>
+      <a class="navbar-brand" href="#">Movie-Review</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/admin/books/add">Add Book</a></li>
+        <li><a href="#/admin/movies/add">Add Rating/Review</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
@@ -26,7 +26,7 @@
 </nav>
 
 <a href="#/">Go Back</a>
-<div class="panel panel-default" ng-init="getBooks()">
+<div class="panel panel-default" ng-init="getReviews()">
   <div class="panel-heading">
     <h3 class="panel-title">Recent reviews</h3>
   </div>
@@ -40,7 +40,7 @@
             <p>Approved Status: {{ book.approved }}</p>
             <a
               class="btn btn-primary"
-              href="#/admin/books/details/{{ book._id }}"
+              href="#/admin/movies/details/{{ book._id }}"
               >View Details</a
             >
           </div>

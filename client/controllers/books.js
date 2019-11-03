@@ -1,78 +1,78 @@
 var myApp = angular.module("myApp");
 
-myApp.controller("BooksController", [
+myApp.controller("MoviesController", [
   "$scope",
   "$http",
   "$location",
   "$routeParams",
   function($scope, $http, $location, $routeParams) {
-    console.log("BooksController loaded...");
+    console.log("MoviesController loaded...");
 
-    $scope.getBooks = function() {
-      $http.get("/student/books").success(function(response) {
+    $scope.getReviews = function() {
+      $http.get("/student/movies").success(function(response) {
         $scope.books = response;
       });
     };
 
-    $scope.getBooks = function() {
-      $http.get("/admin/books").success(function(response) {
+    $scope.getReviews = function() {
+      $http.get("/admin/movies").success(function(response) {
         $scope.books = response;
       });
     };
 
-    $scope.getBook = function() {
+    $scope.getReview = function() {
       var id = $routeParams.id;
-      $http.get("/student/books/" + id).success(function(response) {
+      $http.get("/student/movies/" + id).success(function(response) {
         $scope.book = response;
       });
     };
 
-    $scope.getBook = function() {
+    $scope.getReview = function() {
       var id = $routeParams.id;
-      $http.get("/admin/books/" + id).success(function(response) {
+      $http.get("/admin/movies/" + id).success(function(response) {
         $scope.book = response;
       });
     };
 
-    $scope.addBookA = function() {
+    $scope.addReviewA = function() {
       console.log($scope.book);
-      $http.post("/admin/books/", $scope.book).success(function(response) {
-        window.location.href = "#/admin/books";
+      $http.post("/admin/movies/", $scope.book).success(function(response) {
+        window.location.href = "#/admin/movies";
       });
     };
 
-    $scope.addBook = function() {
+    $scope.addReview = function() {
       console.log($scope.book);
-      $http.post("/student/books/", $scope.book).success(function(response) {
-        window.location.href = "#/student/books";
+      $http.post("/student/movies/", $scope.book).success(function(response) {
+        window.location.href = "#/student/movies";
       });
     };
 
-    $scope.updateBook = function() {
+    $scope.updateReview = function() {
       var id = $routeParams.id;
       $http
-        .put("/student/books/" + id, $scope.book)
+        .put("/student/movies/" + id, $scope.book)
         .success(function(response) {
-          window.location.href = "#/admin/books";
+          window.location.href = "#/admin/movies";
         });
     };
 
-    $scope.updateBook = function() {
+    $scope.updateReview = function() {
       var id = $routeParams.id;
-      $http.put("/admin/books/" + id, $scope.book).success(function(response) {
-        window.location.href = "#/admin/books";
+      $http.put("/admin/movies/" + id, $scope.book).success(function(response) {
+        window.location.href = "#/admin/movies";
       });
     };
 
-    $scope.removeBook = function(id) {
-      $http.delete("/student/books/" + id).success(function(response) {
-        window.location.href = "#/student/books";
+    $scope.removeReview = function(id) {
+      $http.delete("/student/movies/" + id).success(function(response) {
+        window.location.href = "#/student/movies";
       });
     };
 
-    $scope.removeBook = function(id) {
-      $http.delete("/admin/books/" + id).success(function(response) {
-        window.location.href = "#/admin/books";
+    $scope.removeReview = function(id) {
+      $http.delete("/admin/movies/" + id).success(function(response) {
+        window.location.href = "#/admin/movies";
       });
     };
   }
