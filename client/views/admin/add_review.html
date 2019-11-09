@@ -39,7 +39,7 @@
             <input
               type="text"
               class="form-control"
-              ng-model="book.admn"
+              ng-model="review.admn"
               placeholder="Admission number"
             />
           </div>
@@ -48,7 +48,7 @@
             <input
               type="text"
               class="form-control"
-              ng-model="book.email"
+              ng-model="review.email"
               placeholder="Email"
             />
           </div>
@@ -57,13 +57,13 @@
             <input
               type="text"
               class="form-control"
-              ng-model="book.movie"
+              ng-model="review.movie"
               placeholder="Moviename"
             />
           </div>
           <div class="form-group">
             <label>Rating</label>
-            <select ng-model="book.rating" class="form-control">
+            <select ng-model="review.rating" class="form-control">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -75,7 +75,7 @@
             <label>Review</label>
             <textarea
               class="form-control"
-              ng-model="book.review"
+              ng-model="review.description"
               placeholder="Description"
             ></textarea>
           </div>

@@ -8,43 +8,43 @@ myApp.config(function($routeProvider) {
     })
     .when("/student", {
       controller: "MoviesController",
-      templateUrl: "views/student/books.html"
+      templateUrl: "views/student/reviews.html"
     })
     .when("/student/movies", {
       controller: "MoviesController",
-      templateUrl: "views/student/books.html"
+      templateUrl: "views/student/reviews.html"
     })
     .when("/student/movies/details/:id", {
       controller: "MoviesController",
-      templateUrl: "views/student/book_details.html"
+      templateUrl: "views/student/review_details.html"
     })
     .when("/student/movies/add", {
       controller: "MoviesController",
-      templateUrl: "views/student/add_book.html"
+      templateUrl: "views/student/add_review.html"
     })
     .when("/student/movies/edit/:id", {
       controller: "MoviesController",
-      templateUrl: "views/student/edit_book.html"
+      templateUrl: "views/student/edit_review.html"
     })
     .when("/admin", {
       controller: "MoviesController",
-      templateUrl: "views/books.html"
+      templateUrl: "views/reviews.html"
     })
     .when("/admin/movies", {
       controller: "MoviesController",
-      templateUrl: "views/admin/books.html"
+      templateUrl: "views/admin/reviews.html"
     })
     .when("/admin/movies/details/:id", {
       controller: "MoviesController",
-      templateUrl: "views/admin/book_details.html"
+      templateUrl: "views/admin/review_details.html"
     })
     .when("/admin/movies/add", {
       controller: "MoviesController",
-      templateUrl: "views/admin/add_book.html"
+      templateUrl: "views/admin/add_review.html"
     })
     .when("/admin/movies/edit/:id", {
       controller: "MoviesController",
-      templateUrl: "views/admin/edit_book.html"
+      templateUrl: "views/admin/edit_review.html"
     })
     .otherwise({
       redirectTo: "/"

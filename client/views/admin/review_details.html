@@ -28,17 +28,19 @@
 <a href="#/admin/movies">Go Back</a>
 <div class="panel panel-default" ng-init="getReview()">
   <div class="panel-heading">
-    <h3 class="panel-title">Movie Name : {{ book.movie }}</h3>
+    <h3 class="panel-title">Movie Name : {{ review.movie }}</h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
         <ul class="list-group">
-          <li class="list-group-item">Review: {{ book.review }}</li>
-          <li class="list-group-item">Rating: {{ book.rating }}</li>
-          <li class="list-group-item">Author: {{ book.email }}</li>
-          <li class="list-group-item">Admission Number: {{ book.admn }}</li>
-          <li class="list-group-item">Approved Status: {{ book.approved }}</li>
+          <li class="list-group-item">Review: {{ review.description }}</li>
+          <li class="list-group-item">Rating: {{ review.rating }}</li>
+          <li class="list-group-item">Email: {{ review.email }}</li>
+          <li class="list-group-item">Admission Number: {{ review.admn }}</li>
+          <li class="list-group-item">
+            Approved Status: {{ review.approved }}
+          </li>
         </ul>
       </div>
     </div>
@@ -46,6 +48,6 @@
 </div>
 
 <div class="pull-right">
-  <a href="#/admin/movies/edit/{{ book._id }}">Edit</a> |
-  <a href="#" ng-click="removeReview(book._id)">Delete</a>
+  <a href="#/admin/movies/edit/{{ review._id }}">Edit</a> |
+  <a href="#" ng-click="removeReview(review._id)">Delete</a>
 </div>

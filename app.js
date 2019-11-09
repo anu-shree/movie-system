@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 app.use(express.static(__dirname + "/client"));
 app.use(bodyParser.json());
 
-Book = require("./models/book");
+Review = require("./models/review");
 
 // Connect to Mongoose
 mongoose.connect("mongodb://localhost/bookstore");
@@ -17,120 +17,120 @@ app.get("/", (req, res) => {
 });
 
 app.get("/student", (req, res) => {
-  Book.getReviews((err, books) => {
+  Review.getReviews((err, reviews) => {
     if (err) {
       throw err;
     }
-    res.json(books);
+    res.json(reviews);
   });
 });
 
 app.get("/student/movies", (req, res) => {
-  Book.getReviews((err, books) => {
+  Review.getReviews((err, reviews) => {
     if (err) {
       throw err;
     }
-    res.json(books);
+    res.json(reviews);
   });
 });
 
 app.get("/student/movies/:_id", (req, res) => {
-  Book.getReviewById(req.params._id, (err, book) => {
+  Review.getReviewById(req.params._id, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.post("/student/movies", (req, res) => {
-  var book = req.body;
-  Book.addReview(book, (err, book) => {
+  var review = req.body;
+  Review.addReview(review, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.put("/student/movies/:_id", (req, res) => {
   var id = req.params._id;
-  var book = req.body;
-  Book.updateReview(id, book, {}, (err, book) => {
+  var review = req.body;
+  Review.updateReview(id, review, {}, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.delete("/student/movies/:_id", (req, res) => {
   var id = req.params._id;
-  Book.removeReview(id, (err, book) => {
+  Review.removeReview(id, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.get("/admin", (req, res) => {
-  Book.getReviews((err, books) => {
+  Review.getReviews((err, reviews) => {
     if (err) {
       throw err;
     }
-    res.json(books);
+    res.json(reviews);
   });
 });
 
 app.get("/admin/movies", (req, res) => {
-  Book.getReviews((err, books) => {
+  Review.getReviews((err, reviews) => {
     if (err) {
       throw err;
     }
-    res.json(books);
+    res.json(reviews);
   });
 });
 
 app.get("/admin/movies/:_id", (req, res) => {
-  Book.getReviewById(req.params._id, (err, book) => {
+  Review.getReviewById(req.params._id, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.post("/admin/movies", (req, res) => {
-  var book = req.body;
-  Book.addReviewA(book, (err, book) => {
+  var review = req.body;
+  Review.addReviewA(review, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.put("/admin/movies/:_id", (req, res) => {
   var id = req.params._id;
-  var book = req.body;
-  Book.updateReview(id, book, {}, (err, book) => {
+  var review = req.body;
+  Review.updateReview(id, review, {}, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
 app.delete("/admin/movies/:_id", (req, res) => {
   var id = req.params._id;
-  Book.removeReview(id, (err, book) => {
+  Review.removeReview(id, (err, review) => {
     if (err) {
       throw err;
     }
-    res.json(book);
+    res.json(review);
   });
 });
 
-app.listen(3041);
-console.log("Running on port 3041...");
+app.listen(3042);
+console.log("Running on port 3042...");

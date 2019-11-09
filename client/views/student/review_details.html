@@ -1,0 +1,98 @@
+<!--<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Movie-Review</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="student/movies/add">Add Rating/Review</a></li>
+      </ul>
+    </div>
+   
+  </div>
+</nav>
+
+<a href="#/student/movies">Go Back</a>
+<div class="panel panel-default" ng-init="getReview()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Movie Name : {{ review.movie }}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item">Review: {{ reviewObj.description }}</li>
+          <li class="list-group-item">Rating: {{ reviewObj.rating }}</li>
+          <li class="list-group-item">E-mail: {{ review.email }}</li>
+          <li class="list-group-item">Admission Number: {{ review.admn }}</li>
+          <li class="list-group-item">
+            Approved Status: {{ review.approved }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Movie-Review</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="student/movies/add">Add Rating/Review</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+<a href="#/student/movies">Go Back</a>
+<div class="panel panel-default" ng-init="getReview()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Movie Name : {{ review.movie }}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item">Review: {{ review.description }}</li>
+          <li class="list-group-item">Rating: {{ review.rating }}</li>
+          <li class="list-group-item">Author: {{ review.email }}</li>
+          <li class="list-group-item">Admission Number: {{ review.admn }}</li>
+          <li class="list-group-item">
+            Approved Status: {{ review.approved }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
